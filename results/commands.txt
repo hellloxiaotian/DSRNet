@@ -1,0 +1,19 @@
+baseline LESRCNN U100 PSNR/SSIM 31.45/0.9206
+
+preprocessing
+
+cd dataset
+python div2h5.py
+
+Training a model for single scale
+
+x2
+python x2/train.py --patch_size 64 --batch_size 64 --max_steps 600000 --decay 400000 --model dsrnet --ckpt_name dsrnet_x2 --ckpt_dir checkpoint/dsrnet_x2 --scale 2 --num_gpu 1
+x3
+python x3/train.py --patch_size 64 --batch_size 64 --max_steps 600000 --decay 400000 --model dsrnet --ckpt_name dsrnet_x3 --ckpt_dir checkpoint/dsrnet_x3 --scale 3 --num_gpu 1
+x4
+python x4/train.py --patch_size 64 --batch_size 64 --max_steps 600000 --decay 400000 --model dsrnet --ckpt_name dsrnet_x4 --ckpt_dir checkpoint/dsrnet_x4 --scale 4 --num_gpu 1
+
+
+Test with your own parameter setting in the sample.py.
+python sample.py

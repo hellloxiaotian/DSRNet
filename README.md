@@ -62,7 +62,7 @@
 
 ## 1. Network architecture of DSRNet
 
-![Network architecture of DSRNet](./results/Figure 1.png)
+<img src="./results/Figure 1.png" alt="Set5" style="zoom:67%;" />
 
 ## 2. DSRNet for x2，x3 and x4 on Set5
 
@@ -82,11 +82,11 @@
 
 ## 6. Running time of different methods on hr images of size 256x256, 512x512 and 1024x1024 for x4.
 
-![Running time](./results/Running time.png)
+<img src="./results/Running time.png" alt="Running time" style="zoom:67%;" />
 
 ## 7. Complexities of different methods for x4.
 
-![Complexity](./results/Complexity.png)
+<img src="./results/Complexity.png" alt="Complexity" style="zoom:67%;" />
 
 ## 8. Visual results of U100 for x2.
 

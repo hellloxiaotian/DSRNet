@@ -24,8 +24,8 @@
 
 #### importlib
 
-## Commands
-### Training datasets
+## Datasets
+### Training dataset
 
 #### The training dataset is downloaded at https://data.vision.ee.ethz.ch/cvl/DIV2K/
 
@@ -41,6 +41,7 @@
 
 #### The test dataset of DIV2K is downloaded at 链接：https://data.vision.ee.ethz.ch/cvl/DIV2K/
 
+## Commands
 ### preprocessing
 
 ### cd dataset

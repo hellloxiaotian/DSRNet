@@ -98,12 +98,15 @@
 
 <img src="./results/Figure 3.png" alt="B100" style="zoom:67%;" />
 
-## If you cite this paper, plesae the follow format:
+## If you cite this paper, please use the following format:
 
 ### 1. Tian, C., Zhang, X., Zhang, Q., Yang, M., & Ju, Z. (2023). Image super-resolution via dynamic network. arXiv preprint arXiv:2310.10413.
-### 2. @article{tian2023image,
-  ### title={Image super-resolution via dynamic network},
-  ### author={Tian, Chunwei and Zhang, Xuanyu and Zhang, Qi and Yang, Mingming and Ju, Zhaojie},
-  ### journal={arXiv preprint arXiv:2310.10413},
-  ### year={2023}
-### }
+### 2. BibTeX style format.
+```BibTeX
+@article{tian2023image,
+      title={Image super-resolution via dynamic network},
+      author={Tian, Chunwei and Zhang, Xuanyu and Zhang, Qi and Yang, Mingming and Ju, Zhaojie},
+      journal={arXiv preprint arXiv:2310.10413},
+      year={2023}
+}
+```

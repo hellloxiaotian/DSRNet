@@ -20,12 +20,15 @@ def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument("--model", type=str, default="dsrnet")
     parser.add_argument("--ckpt_path", type=str,
-                        default="DSRNet/checkpoint/DSRNet/model/model_best.pt")
+                        # default="DSRNet/checkpoint/DSRNet/model/model_best.pt")
+                        # default="DSRNet-main/checkpoint/DSRNet/DSRNet_x3_600000.pth")
+                        default="DSRNet-main/checkpoint/DSRNet/DSRNet_x4_600000.pth")  # Replace with your setting.
     parser.add_argument("--group", type=int, default=1)
     parser.add_argument("--sample_dir", type=str, default="DSRNet/results/DSRNet")  # SR results
-    parser.add_argument("--test_data_dir", type=str, default="datasets/Set5")  # end with the name of different datasets
+    parser.add_argument("--test_data_dir", type=str, default="/data/zxy/datasets/B100")  # end with the name of different datasets
     parser.add_argument("--cuda", action="store_true")
-    parser.add_argument("--scale", type=int, default=4)
+    # parser.add_argument("--scale", type=int, default=3)  # Replace with your setting.
+    parser.add_argument("--scale", type=int, default=4)  # The parameter scale must match the pretrained model. If the state_dict is not match with the model(Net), check this setting.
     parser.add_argument("--shave", type=int, default=20)
 
     return parser.parse_args()
@@ -199,7 +202,8 @@ def sample(net, device, dataset, cfg):
 
 def main(cfg):
     module = importlib.import_module("model.{}".format(cfg.model))
-    net = module.Net(cfg)
+    net = module.Net(scale=cfg.scale,
+                     group=cfg.group)  # The parameters here need to be consistent in the pipeline
     print(json.dumps(vars(cfg), indent=4, sort_keys=True))  # print cfg information according order.
     state_dict = torch.load(cfg.ckpt_path)
     new_state_dict = OrderedDict()
